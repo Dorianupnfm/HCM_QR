@@ -1,63 +1,57 @@
-index.html      <!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Monto Monetario</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Monto Monetario</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Sistema de Monto Monetario</h1>
-        </header>
-        <main>
-            <section class="reload-section">
-                <button id="reload-button" class="button">RECARGAR</button>
-                <div class="amount-section" style="display: none;">
-                    <h2>Ingrese el monto a recargar:</h2>
-                    <input type="number" id="new-amount" />
-                    <button id="confirm-button" class="button">CONFIRMAR</button>
-                </div>
-                <h2 id="current-amount-label">Monto Actual: <span id="current-amount">$0.00</span></h2>
+  <div class="container">
+    <header>
+      <h1>Sistema de Monto Monetario</h1>
+    </header>
+    <main>
+      <section class="reload-section">
+        <h2>Monto Actual: <span id="current-amount">$0.00</span></h2>
+        <button id="reload-button" class="button">Recargar</button>
+        <div class="amount-section" style="display: none;">
+          <h2>Ingrese el monto a recargar:</h2>
+          <input type="number" id="new-amount" />
+          <button id="confirm-button" class="button">Confirmar</button>
+        </div>
+      </section>
+      <section class="qr-section">
+        <h2>Generar QR</h2>
+        <div class="input-group">
+          <label for="amount">Monto para QR:</label>
+          <input type="number" id="amount" placeholder="Ingrese el monto">
+        </div>
+        <div class="input-group">
+          <label for="fuel-type">Tipo de Combustible:</label>
+          <select id="fuel-type">
+            <option value="Gasolina Regular">Gasolina Regular</option>
+            <option value="Gasolina Premium">Gasolina Premium</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Gas Natural">Gas Natural</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="comment">Comentario:</label>
+          <input type="text" id="comment" placeholder="Ingrese un comentario">
+        </div>
+        <button id="generate-qr-button" class="button">Generar QR</button>
+        <div id="qr-container" class="centered">
+          <div id="qr-code"></div>
+          <a id="download-link" class="button" style="display: none;">Descargar QR</a>
+        </div>
+      </section>
+    </main>
+  </div>
 
-            </section>
-            <section class="qr-section">
-                <h2>Generar QR</h2>
-                <div class="input-group">
-                    <label for="amount">Monto para QR:</label>
-                    <input type="number" id="amount" placeholder="Ingrese el monto">
-                    <span id="amount-error" class="error-message"></span>
-                </div>
-                <div class="input-group">
-                    <label for="fuel-type">Tipo de Combustible:</label>
-                    <select id="fuel-type">
-                        <option value="Gasolina Regular">Gasolina Regular</option>
-                        <option value="Gasolina Premium">Gasolina Premium</option>
-                        <option value="Diesel">Diesel</option>
-                        <option value="Gas Natural">Gas Natural</option>
-                        <option value="Otros">Otros</option>
-                    </select>
-                    <span id="fuel-type-error" class="error-message"></span>
-                </div>
-                <div class="input-group">
-                    <label for="comment">Comentario:</label>
-                    <input type="text" id="comment" placeholder="Ingrese un comentario">
-                    <span id="comment-error" class="error-message"></span>
-                </div>
-                <button id="generate-qr-button" class="button">Generar QR</button>
-                <div id="qr-container" class="centered">
-                    <div id="qr-code"></div>
-                    <a id="download-link" class="button" style="display: none;">Descargar QR</a>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

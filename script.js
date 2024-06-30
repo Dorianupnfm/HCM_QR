@@ -30,8 +30,6 @@ function generateQRCode() {
 }
 
 
-
-
 function downloadQR() {
     const qrCanvas = document.getElementById("qr-code").getElementsByTagName("canvas")[0];
     const downloadCanvas = document.createElement("canvas");
