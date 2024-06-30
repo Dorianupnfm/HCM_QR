@@ -1,0 +1,39 @@
+<!-- PaginaDestino.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del QR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalles del QR</h1>
+        <div class="detail-section">
+            <h2>Monto:</h2>
+            <p id="amount-detail"></p>
+        </div>
+        <div class="detail-section">
+            <h2>Tipo de Combustible:</h2>
+            <p id="fuel-type-detail"></p>
+        </div>
+        <div class="detail-section">
+            <h2>Comentario:</h2>
+            <p id="comment-detail"></p>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const amount = urlParams.get("amount");
+        const fuelType = urlParams.get("fuelType");
+        const comment = urlParams.get("comment");
+
+        document.getElementById("amount-detail").textContent = amount;
+        document.getElementById("fuel-type-detail").textContent = fuelType;
+       document.getElementById("comment-detail").textContent = comment;
+    </script>
+</body>
+</html>
